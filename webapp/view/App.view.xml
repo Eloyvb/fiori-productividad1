@@ -1,0 +1,29 @@
+<mvc:View controllerName="productividad.controller.App"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:sf="sap.f">
+
+    <Shell>
+      <App id="app">
+       <sf:DynamicPage id="idDinamicPage">
+       <sf:title>
+        <sf:DynamicPageTitle id="idDinamicPagetitle">
+         <sf:content>
+          <Title id="_idTitle" text="{i18n>title}"></Title>
+         </sf:content>
+        </sf:DynamicPageTitle>
+       </sf:title>
+
+       <sf:header>
+        <sf:DynamicPageHeader id="idDinamicPageheader"> 
+          <sf:content>
+            <mvc:XMLView viewName="productividad.view.productividad"/>
+          </sf:content>
+       
+        </sf:DynamicPageHeader>
+       </sf:header>
+       </sf:DynamicPage>
+      </App>
+    </Shell>
+    
+</mvc:View>

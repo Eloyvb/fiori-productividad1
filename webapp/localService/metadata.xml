@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="SAP__measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="SAP__capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="SAP__aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="SAP__validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="SAP__UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="SAP__HTML5"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PDF',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PDF.v1" Alias="SAP__PDF"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_SESSION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Session.v1" Alias="SAP__session"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="com.sap.gateway.srvd_a2x.zsd_tiemposprodvis2.v0001" Alias="SAP__self">
+            <Annotation Term="SAP__core.SchemaVersion" String="1.0.0"/>
+            <EntityType Name="ZDF_RouteDimType">
+                <Key>
+                    <PropertyRef Name="Route"/>
+                </Key>
+                <Property Name="Route" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="NameRoute" Type="Edm.String" Nullable="false" MaxLength="50"/>
+            </EntityType>
+            <EntityType Name="ZDF_DetailTiemposType">
+                <Key>
+                    <PropertyRef Name="Vkorg"/>
+                    <PropertyRef Name="Vlid"/>
+                    <PropertyRef Name="Route"/>
+                    <PropertyRef Name="Erdat"/>
+                    <PropertyRef Name="VisitId"/>
+                    <PropertyRef Name="Kunnr"/>
+                </Key>
+                <Property Name="Vkorg" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="Vlid" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Route" Type="Edm.String" Nullable="false" MaxLength="6"/>
+                <Property Name="Erdat" Type="Edm.Date" Nullable="false"/>
+                <Property Name="VisitId" Type="Edm.String" Nullable="false" MaxLength="6"/>
+                <Property Name="Kunnr" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="DiaBegTime" Type="Edm.TimeOfDay" Nullable="false"/>
+                <Property Name="DiaEndTime" Type="Edm.TimeOfDay" Nullable="false"/>
+                <Property Name="Barcode" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="Lecman" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="CompraONo" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="CausaNoCompra" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="Frecuencia" Type="Edm.String" Nullable="false" MaxLength="2"/>
+            </EntityType>
+            <EntityType Name="Z_DF_OrgVtasType">
+                <Key>
+                    <PropertyRef Name="Vkorg"/>
+                </Key>
+                <Property Name="Vkorg" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="50"/>
+            </EntityType>
+            <EntityType Name="ZDF_TiemposProdVis2Type">
+                <Key>
+                    <PropertyRef Name="VKORG"/>
+                    <PropertyRef Name="VLID"/>
+                    <PropertyRef Name="ROUTE"/>
+                    <PropertyRef Name="ERDAT"/>
+                </Key>
+                <Property Name="VKORG" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="VLID" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="ROUTE" Type="Edm.String" Nullable="false" MaxLength="6"/>
+                <Property Name="ERDAT" Type="Edm.Date" Nullable="false"/>
+                <Property Name="SALIDA" Type="Edm.TimeOfDay" Nullable="false"/>
+                <Property Name="DIA_BEG_TIME" Type="Edm.TimeOfDay" Nullable="false"/>
+                <Property Name="DIA_END_TIME" Type="Edm.TimeOfDay" Nullable="false"/>
+                <Property Name="TOTAL" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="VISITADOS" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="COMPRARON" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="LECTBAR" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="VISFFREC" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="COMFFREC" Type="Edm.Int32" Nullable="false"/>
+                <NavigationProperty Name="_details" Type="Collection(com.sap.gateway.srvd_a2x.zsd_tiemposprodvis2.v0001.ZDF_DetailTiemposType)"/>
+                <NavigationProperty Name="_org" Type="com.sap.gateway.srvd_a2x.zsd_tiemposprodvis2.v0001.Z_DF_OrgVtasType"/>
+                <NavigationProperty Name="_route" Type="com.sap.gateway.srvd_a2x.zsd_tiemposprodvis2.v0001.ZDF_RouteDimType"/>
+            </EntityType>
+            <EntityContainer Name="Container">
+                <EntitySet Name="ZDF_DetailTiempos" EntityType="com.sap.gateway.srvd_a2x.zsd_tiemposprodvis2.v0001.ZDF_DetailTiemposType"/>
+                <EntitySet Name="ZDF_RouteDim" EntityType="com.sap.gateway.srvd_a2x.zsd_tiemposprodvis2.v0001.ZDF_RouteDimType"/>
+                <EntitySet Name="ZDF_TiemposProdVis2" EntityType="com.sap.gateway.srvd_a2x.zsd_tiemposprodvis2.v0001.ZDF_TiemposProdVis2Type">
+                    <NavigationPropertyBinding Path="_details" Target="ZDF_DetailTiempos"/>
+                    <NavigationPropertyBinding Path="_org" Target="Z_DF_OrgVtas"/>
+                    <NavigationPropertyBinding Path="_route" Target="ZDF_RouteDim"/>
+                </EntitySet>
+                <EntitySet Name="Z_DF_OrgVtas" EntityType="com.sap.gateway.srvd_a2x.zsd_tiemposprodvis2.v0001.Z_DF_OrgVtasType"/>
+            </EntityContainer>
+            <Annotations Target="SAP__self.ZDF_RouteDimType">
+                <Annotation Term="SAP__common.Label" String="Df para rutas dim"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/ZDF_RouteDim">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.ZDF_DetailTiemposType/Vkorg">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Sales Organization"/>
+                <Annotation Term="SAP__common.Heading" String="SOrg."/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZDF_DetailTiemposType/Vlid">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Visit List ID"/>
+                <Annotation Term="SAP__common.Heading" String="V List ID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Visit List"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZDF_DetailTiemposType/Route">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Route"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZDF_DetailTiemposType/VisitId">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Visit"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Visit (Tour Data Entry)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZDF_DetailTiemposType/Kunnr">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Customer"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Customer Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZDF_DetailTiemposType/Barcode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Lect. código?"/>
+                <Annotation Term="SAP__common.Heading" String="Lect. por código de barras?"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Código de Barras (BARRAS/MANUAL)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZDF_DetailTiemposType/Lecman">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Mot. lect. m."/>
+                <Annotation Term="SAP__common.Heading" String="Mot. lectura manual"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Motivo de lectura manual"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZDF_DetailTiemposType/CompraONo">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Compro?"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Compra o No"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZDF_DetailTiemposType/CausaNoCompra">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Causa no c."/>
+                <Annotation Term="SAP__common.Heading" String="Causa no compra"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Causa No Compra"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZDF_DetailTiemposType/Frecuencia">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Frecuencia"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZDF_DetailTiemposType">
+                <Annotation Term="SAP__common.Label" String="DF Detalle de visita"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/ZDF_DetailTiempos">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Vkorg"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Route"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="VisitId"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Barcode"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Lecman"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="CompraONo"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="CausaNoCompra"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Frecuencia"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.Z_DF_OrgVtasType">
+                <Annotation Term="SAP__common.Label" String="Dummy Org. de Vtas."/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/Z_DF_OrgVtas">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.ZDF_TiemposProdVis2Type/VKORG">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Sales Organization"/>
+                <Annotation Term="SAP__common.Heading" String="SOrg."/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZDF_TiemposProdVis2Type/VLID">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Visit List ID"/>
+                <Annotation Term="SAP__common.Heading" String="V List ID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Visit List"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZDF_TiemposProdVis2Type/ROUTE">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Route"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZDF_TiemposProdVis2Type">
+                <Annotation Term="SAP__common.Label" String="DF Tiempo visita consumo"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/ZDF_TiemposProdVis2">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="VKORG"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="ROUTE"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.Container">
+                <Annotation Term="SAP__aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="SAP__aggregation.RollupType/None"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="SAP__capabilities.FilterFunctions">
+                    <Collection>
+                        <String>eq</String>
+                        <String>ne</String>
+                        <String>gt</String>
+                        <String>ge</String>
+                        <String>lt</String>
+                        <String>le</String>
+                        <String>and</String>
+                        <String>or</String>
+                        <String>contains</String>
+                        <String>startswith</String>
+                        <String>endswith</String>
+                        <String>any</String>
+                        <String>all</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SupportedFormats">
+                    <Collection>
+                        <String>application/json</String>
+                        <String>application/pdf</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__PDF.Features">
+                    <Record>
+                        <PropertyValue Property="DocumentDescriptionReference" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="DocumentDescriptionCollection" String="MyDocumentDescriptions"/>
+                        <PropertyValue Property="ArchiveFormat" Bool="true"/>
+                        <PropertyValue Property="Border" Bool="true"/>
+                        <PropertyValue Property="CoverPage" Bool="true"/>
+                        <PropertyValue Property="FitToPage" Bool="true"/>
+                        <PropertyValue Property="FontName" Bool="true"/>
+                        <PropertyValue Property="FontSize" Bool="true"/>
+                        <PropertyValue Property="Margin" Bool="true"/>
+                        <PropertyValue Property="Signature" Bool="true"/>
+                        <PropertyValue Property="ResultSizeDefault" Int="20000"/>
+                        <PropertyValue Property="ResultSizeMaximum" Int="20000"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.ZDF_DetailTiemposType/Erdat">
+                <Annotation Term="SAP__common.Label" String="Created On"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Record Created On"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZDF_DetailTiemposType/DiaBegTime">
+                <Annotation Term="SAP__common.Label" String="Start Time"/>
+                <Annotation Term="SAP__common.Heading" String="StartTime"/>
+                <Annotation Term="SAP__common.QuickInfo" String="DSD Start Time"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZDF_DetailTiemposType/DiaEndTime">
+                <Annotation Term="SAP__common.Label" String="End Time"/>
+                <Annotation Term="SAP__common.QuickInfo" String="DSD End Time"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZDF_TiemposProdVis2Type/ERDAT">
+                <Annotation Term="SAP__common.Label" String="Created On"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Record Created On"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZDF_TiemposProdVis2Type/SALIDA">
+                <Annotation Term="SAP__common.Label" String="Start Time"/>
+                <Annotation Term="SAP__common.Heading" String="StartTime"/>
+                <Annotation Term="SAP__common.QuickInfo" String="DSD Start Time"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZDF_TiemposProdVis2Type/DIA_BEG_TIME">
+                <Annotation Term="SAP__common.Label" String="Start Time"/>
+                <Annotation Term="SAP__common.Heading" String="StartTime"/>
+                <Annotation Term="SAP__common.QuickInfo" String="DSD Start Time"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZDF_TiemposProdVis2Type/DIA_END_TIME">
+                <Annotation Term="SAP__common.Label" String="End Time"/>
+                <Annotation Term="SAP__common.QuickInfo" String="DSD End Time"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZDF_TiemposProdVis2Type/TOTAL">
+                <Annotation Term="SAP__common.Label" String="Integer"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Whole Number with +/- Sign (-2.147.483.648 .. 2.147.483.647)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZDF_TiemposProdVis2Type/VISITADOS">
+                <Annotation Term="SAP__common.Label" String="Integer"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Whole Number with +/- Sign (-2.147.483.648 .. 2.147.483.647)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZDF_TiemposProdVis2Type/COMPRARON">
+                <Annotation Term="SAP__common.Label" String="Integer"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Whole Number with +/- Sign (-2.147.483.648 .. 2.147.483.647)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZDF_TiemposProdVis2Type/LECTBAR">
+                <Annotation Term="SAP__common.Label" String="Integer"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Whole Number with +/- Sign (-2.147.483.648 .. 2.147.483.647)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZDF_TiemposProdVis2Type/VISFFREC">
+                <Annotation Term="SAP__common.Label" String="Integer"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Whole Number with +/- Sign (-2.147.483.648 .. 2.147.483.647)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZDF_TiemposProdVis2Type/COMFFREC">
+                <Annotation Term="SAP__common.Label" String="Integer"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Whole Number with +/- Sign (-2.147.483.648 .. 2.147.483.647)"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

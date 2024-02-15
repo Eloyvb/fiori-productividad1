@@ -1,0 +1,19 @@
+<mvc:View
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Page
+		title="{i18n>detailPageTitle}">
+		<ObjectHeader intro="{visitas>VKORG}"
+			title="{visitas>ROUTE}"/>
+       <!-- <content>
+			<List id="detailsList" headerText="{i18n>ListadoDeVisita}" items="{visitas>/ZDF_DetailTiempos}">
+				<items>
+					<StandardListItem
+						title="{Route}"
+						iconDensityAware="false"
+						iconInset="false"/>
+				</items>
+			</List>
+		</content> -->
+	</Page>
+</mvc:View>

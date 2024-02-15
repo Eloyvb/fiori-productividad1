@@ -1,0 +1,70 @@
+<mvc:View 
+    controllerName="productividad.controller.productividad"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    
+   
+        <Table id="Table" items="{ 
+                              path: 'visitas>/ZDF_TiemposProdVis2', 
+                              sorter: {
+                                 path: 'VKORG', 
+                                 group: true
+                                 }
+                              }" >
+          <columns>
+            <Column id="idVkorg">
+              <header>
+                  <Label id="_ValueVkorg" text="{i18n>orgVtas}"></Label>
+               </header>
+            </Column>
+         <Column id="idRoute">
+         <header>
+            <Label id="_textRoute" text="{i18n>ruta}"></Label>
+         </header>
+         </Column> 
+         <Column id="idFecha">
+         <header>
+           <Label id="_textFecha" text="{i18n>fecha}"></Label>
+         </header>
+         </Column>
+         <Column id="idSalida">
+         <header>
+          <Label id="_textSalida" text="{i18n>salida}"></Label>
+         </header>
+         </Column>
+
+         </columns>
+
+         <items>
+     
+            <ColumnListItem id="_ColumnListItems" type= "Navigation" press=".onDetailsVisita">
+               <cells>
+      
+                  <ObjectListItem title="{visitas>VKORG}">
+                    <firstStatus>
+                    <ObjectStatus
+                        text="{
+                            path: 'visitas>VKORG',
+                            formatter: '.formatter.organizacionVentas'
+                        }"/>
+                    </firstStatus>
+                   </ObjectListItem>
+            
+
+             <ObjectIdentifier id="_valueRoute" 
+                            title="{visitas>ROUTE}">
+             </ObjectIdentifier>
+            <ObjectIdentifier id="_valueFecha" 
+                            title="{visitas>ERDAT}">
+             </ObjectIdentifier>
+             <Text id="_ValueSalida" text="{visitas>SALIDA}"></Text>
+             </cells>
+
+          </ColumnListItem>
+
+          </items>
+
+      </Table>
+  
+ 
+</mvc:View>

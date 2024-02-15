@@ -107,7 +107,7 @@
                     ]
                 },
                 {
-                    "pattern": "ZDF_DetailTiempos/{invoicePath}",
+                    "pattern": "ZDF_DetailTiempos/{visitaDetail}",
                     "name": "detail",
                     "target": "detail"
                 }

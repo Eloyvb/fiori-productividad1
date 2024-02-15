@@ -16,9 +16,11 @@ sap.ui.define([
             onDetailsVisita: function(oEvent) {
                 const oItem = oEvent.getSource();
                 const oRouter = this.getOwnerComponent().getRouter();
-            console.log(oItem.getBindingContext("visitas").getPath().substr(1));
-                            oRouter.navTo("detail", {
-                    invoicePath: window.encodeURIComponent(oItem.getBindingContext("visitas").getPath().substr(1))
+                
+                console.log(oItem.getBindingContext("visitas").getPath().substr(1));
+
+                        oRouter.navTo("detail", {
+                    visitaDetailPath: window.encodeURIComponent(oItem.getBindingContext("visitas").getPath().substr(1))
                 });
             }
         });

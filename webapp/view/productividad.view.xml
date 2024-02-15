@@ -2,8 +2,7 @@
     controllerName="productividad.controller.productividad"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
-    
-   
+      
         <Table id="Table" items="{ 
                               path: 'visitas>/ZDF_TiemposProdVis2', 
                               sorter: {
